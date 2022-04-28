@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adjacent</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <style>
+            body {
+                background: rgba(23, 197, 183, 0.822);
+                
+            }
+            h1 {
+                text-align: center;
+            }
+            p {
+                color: black;
+                display: block;
+                text-align: center;
+            }
+            input, button {
+                margin-left: 540px;  
+                display: block;            
+
+            }
+            input {
+                background: transparent;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid orangered;
+                margin-top: 20px;
+text-align: center;
+            }
+            ::placeholder{
+                font-size: medium;
+                text-align: center;
+            }
+            button {
+                width: 80px;
+                margin-left: 580px;
+                margin-top: 10px;
+            }
+        </style>
+            </head>
+            <body>
+                <h1>Adjacent</h1>
+                <input type="text" id="hyp" placeholder="hypotenuse" value="">
+                <input type="text" id="opp" placeholder="opposite" value="">
+            <button onclick="adj()">Click</button>
+    <p id="demo"></p> 
+                <script>
+
+                    var result =  prompt("Your name?")
+                    alert("Hello " + result);
+function adj() {
+   let result, hyp, opp, sqr;
+   hyp = document.getElementById("hyp").value;
+   opp = document.getElementById("opp").value;
+
+
+   if (isNaN(opp && hyp)) {
+       result = "Sorry, the opposite or the hypotenuse is not a number";
+      
+   } else {
+       sqr  = Math.pow(hyp, 2) - Math.pow(opp, 2);
+         result = "The length of the adjacent is " + Math.sqrt(sqr)
+   }
+if (hyp < opp) {
+    result = "The hypotenuse is less than the opposite, which is wrong 😅"
+}
+   document.getElementById("demo").innerHTML = result;
+   return result;
+}
+
+
+                </script>
+
+            </body>
+</html>

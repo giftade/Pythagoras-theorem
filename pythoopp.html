@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Opposite</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <style>
+            body {
+                background: rgba(23, 197, 183, 0.822);
+                
+            }
+            h1 {
+                text-align: center;
+            }
+            p {
+                color: black;
+                display: block;
+                text-align: center;
+            }
+            input, button {
+                margin-left: 540px;  
+                display: block;            
+
+            }
+            input {
+                background: transparent;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid orangered;
+                margin-top: 20px;
+                text-align: center;
+
+            }
+            ::placeholder{
+                font-size: medium;
+                text-align: center;
+            }
+            button {
+                width: 80px;
+                margin-left: 580px;
+                margin-top: 10px;
+            }
+        </style>
+            </head>
+            <body>
+                <h1>Opposite</h1>
+                <input type="text" id="hyp" placeholder="hypotenuse" value="">
+                <input type="text" id="adj" placeholder="adjacent" value="">
+            <button onclick="opp()">Click</button>
+    <p id="demo"></p> 
+                <script>
+function opp() {
+   let result, hyp, adj, sqr;
+   hyp = document.getElementById("hyp").value;
+   adj = document.getElementById("adj").value;
+
+
+   if (isNaN(adj && hyp)) {
+       result = "Sorry, the adjacent or the hypotenuse is not a number";
+      
+   } else {
+       sqr  = Math.pow(hyp, 2) - Math.pow(adj, 2);
+         result = "The length of the opposite is " + Math.sqrt(sqr)
+   }
+if (hyp < adj) {
+    result = "The hypotenuse is less than the adjacent, which is wrong 😅"
+}
+   document.getElementById("demo").innerHTML = result;
+   return result;
+}
+
+
+                </script>
+
+            </body>
+</html>
